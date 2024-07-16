@@ -46,7 +46,7 @@ func (f *Function) RunFunction(_ context.Context, req *fnv1beta1.RunFunctionRequ
 	}
 
 	// Generate in.Count number of S3 buckets
-	for i := 1; i <= int(in.Count); i++ {
+	for i := 1; i <= in.Count; i++ {
 		name := fmt.Sprintf("cnf-bucket-%d", i)
 		b := &s3v1beta.Bucket{
 			ObjectMeta: metav1.ObjectMeta{
